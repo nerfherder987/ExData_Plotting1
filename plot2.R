@@ -1,5 +1,5 @@
 # Coursera Exploratory Data Analysis
-# Course Project 1 - Plot1
+# Course Project 1 - Plot2
 
 # Name each of the plot files as plot1.png, plot2.png, etc.
 
@@ -61,16 +61,15 @@ data.sub <- data[data$dateTime >= startDate & data$dateTime <= endDate,]
 # and a height of 480 pixels.
 
 ## Opens PNG
-png('plot1.png',
+png('plot2.png',
     width=480,height=480,
     units='px',
     bg="transparent")
 
-hist(data.sub$Global_active_power,
-     col="red",
-     main="Global Active Power",
-     xlab="Global Active Power (kilowatts)",
-     ylab="Frequency")
+plot(data.sub$dateTime, data.sub$Global_active_power,
+     type="l",
+     xlab="",
+     ylab="Global Active Power (kilowatts)")
 
 dev.off() # close graphics device
 
