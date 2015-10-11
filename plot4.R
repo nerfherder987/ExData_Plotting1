@@ -11,7 +11,7 @@ packs <- c("dplyr","lubridate") # Character vector of packages to be imported
 lapply(packs,library,character.only=T,logical.return=FALSE) # Import the packages 
 
 # Set working directory
-setwd("/home/ainsley/Documents/Data_Science_Coursera/Exploratory_Data_Analysis/Course_Project_1")
+setwd("/home/Documents")
 
 # Estimate memory needed for data file
 # lines by columns multiplied by 8 bytes per column

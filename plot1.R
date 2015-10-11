@@ -11,7 +11,7 @@ packs <- c("dplyr","lubridate") # Character vector of packages to be imported
 lapply(packs,library,character.only=T,logical.return=FALSE) # Import the packages 
 
 # Set working directory
-setwd("/home/ainsley/Documents/Data_Science_Coursera/Exploratory_Data_Analysis/Course_Project_1")
+setwd("/home/Documents")
 
 # Estimate memory needed for data file
 # lines by columns multiplied by 8 bytes per column
@@ -61,16 +61,17 @@ data.sub <- data[data$dateTime >= startDate & data$dateTime <= endDate,]
 # and a height of 480 pixels.
 
 ## Opens PNG
-png('plot1.png',
+png('plot1a.png',
     width=480,height=480,
     units='px',
     bg="transparent")
 
-hist(data.sub$Global_active_power,
-     col="red",
-     main="Global Active Power",
-     xlab="Global Active Power (kilowatts)",
-     ylab="Frequency")
+with(data.sub,
+     hist(Global_active_power,
+          col="red",
+          main="Global Active Power",
+          xlab="Global Active Power (kilowatts)",
+          ylab="Frequency"))
 
 dev.off() # close graphics device
 
